@@ -1,12 +1,18 @@
 // 'use strict';
 const electron = require('electron');
-const path = require('path');
-const url = require('url');
 
 const {app, BrowserWindow, Menu} = electron;
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
+
+const path = require('path');
+const url = require('url');
+
+var env = require('node-env-file');
+env('.env');
+var priceService = new (require('./js/services/price-service').PriceService)();
+priceService.populateHistoricalPrices();
 
 // prevent window being garbage collected
 let mainWindow;
@@ -33,7 +39,6 @@ function createMainWindow() {
 	const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 	// Insert Menu
 	Menu.setApplicationMenu(mainMenu);
-
 	return win;
 }
 
