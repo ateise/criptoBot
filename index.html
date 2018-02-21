@@ -1,17 +1,29 @@
 <!doctype html>
 <html>
 	<head>
+		<!-- Required meta tags -->
 		<meta charset="utf-8">
+	   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 		<title>CryptoBot</title>
-		<link rel="stylesheet" href="index.css">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css">
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 	</head>
 	<body>
-		<div class="container">
-			<header>
-				<h1>CryptoBot</h1>
-			</header>
-			<section class="main"></section>
-			<footer></footer>
-		</div>
+
+		<main id="appContent">
+			{{ test }}
+		</main>
+
+		<!-- Include main app script -->
+		<script>
+			require('./assets/js/app.js')
+		</script>
+
 	</body>
 </html>
