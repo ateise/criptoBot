@@ -56,7 +56,6 @@ app.on('activate', () => {
 	}
 });
 
-
 function createAddWindow() {
 	// Create new window
 	addWindow  = new BrowserWindow({
@@ -71,6 +70,23 @@ function createAddWindow() {
 		slashes:true
 	}));
 }
+
+function realtimePriceLoop () {
+
+	var frequency = 60 * 1000;
+	var lookback = Date.now() - (30 * 60 * 1000);
+	
+	console.log('running background fetch');
+	priceService.fetchCurrentPrices();
+	priceService.getChangeSince(console.log, lookback);
+	setTimeout(realtimePriceLoop, frequency);
+}
+
+app.on('ready', ()=> {
+
+	realtimePriceLoop();
+	
+});
 
 const mainMenuTemplate = [
 	{
