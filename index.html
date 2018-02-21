@@ -12,18 +12,99 @@
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/main.css">
 
-		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 	</head>
 	<body>
 
-		<main id="appContent">
-			{{ test }}
-		</main>
+		<div id="app">
+			<!-- route outlet -->
+			<!-- component matched by the route will render here -->
+		   <nav class="navbar navbar-light bg-light justify-content-between">
+		      <!-- Main link -->
+		      <a class="navbar-brand" href="#">
+		       <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg"
+		            width="30" height="30" class="d-inline-block align-top mr-1" alt=""
+		         />
+		       CryptoBot
+		     </a>
+
+		      <div class="d-inline text-secondary">
+
+					<router-link to="/foo" class="text-secondary">
+						<i class="far fa-cog fa-lg mr-2"></i>
+					</router-link>
+
+		         <router-link to="/bar" class="text-secondary">
+		            <i class="far fa-bell fa-lg mr-2"></i>
+		         </router-link>
+
+		         <router-link to="/bar" class="text-secondary">
+		            <i class="far fa-user fa-lg"></i>
+		         </router-link>
+		      </div>
+		   </nav>
+
+		   <div class="container-fluid mt-4 px-4">
+		      <div class="row px-2">
+
+		         <div class="card col-sm">
+		           <div class="card-body">
+		             <h5 class="card-title mb-1">$23,435</h5>
+		             <p class="card-text text-secondary">With supporting text below</p>
+		           </div>
+		         </div>
+
+		         <div class="card col-sm">
+		           <div class="card-body">
+		             <h5 class="card-title mb-1">$23,435</h5>
+		             <p class="card-text text-secondary">With supporting text below</p>
+		           </div>
+		         </div>
+
+		         <div class="card col-sm">
+		           <div class="card-body">
+		             <h5 class="card-title mb-1">$23,435</h5>
+		             <p class="card-text text-secondary">With supporting text below</p>
+		           </div>
+		         </div>
+		      </div>
+		   </div>
+
+		   <div class="mt-4 px-4 pb-4">
+		      <h4 class="mb-2">Notifications</h4>
+		      <div class="card mb-2">
+		        <div class="card-body">
+		          <h6 class="card-title mb-1">
+		               Bought 10 BC at $10K
+		             <small class="badge badge-pill badge-success">Success</small>
+		           </h6>
+		          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+		        </div>
+		        <div class="card-footer text-muted">
+		          <a href="#" class="link">Do something</a>
+		        </div>
+		      </div>
+		      <div class="card mb-2">
+		        <div class="card-body">
+		          <h6 class="card-title mb-1">
+		               Bought 10 BC at $10K
+		             <small class="badge badge-pill badge-success">Success</small>
+		           </h6>
+		          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+		        </div>
+		        <div class="card-footer text-muted">
+		          <a href="#" class="link">Do something</a>
+		        </div>
+		      </div>
+		   </div>
+		</div>
 
 		<!-- Include main app script -->
 		<script>
-			require('./assets/js/app.js')
+			require('./app.js')
 		</script>
-
 	</body>
 </html>
